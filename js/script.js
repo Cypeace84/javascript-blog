@@ -10,6 +10,7 @@ document.getElementById('test-button').addEventListener('click', function () {
 */
 
 const titleClickHandler = function (event) {
+  event.preventDefault(); //wyłącza domyśną zmianę hasha strony przez przeglądarkę
   const clickedElement = this;
   console.log('Link was clicked!');
   console.log(event);
@@ -37,6 +38,9 @@ const titleClickHandler = function (event) {
   }
 
   /* get 'href' attribute from the clicked link */
+
+  const articleSelector = clickedElement.getAttribute('href');
+  console.log('link was clicked!:', articleSelector);
 
   /* find the correct article using the selector (value of 'href' attribute) */
 
