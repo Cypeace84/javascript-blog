@@ -1,4 +1,7 @@
 'use strict';
+
+// ???const { active } = require('browser-sync');
+
 /*
 document.getElementById('test-button').addEventListener('click', function () {
   const links = document.querySelectorAll('.titles a');
@@ -7,10 +10,11 @@ document.getElementById('test-button').addEventListener('click', function () {
 */
 
 const titleClickHandler = function (event) {
+  const clickedElement = this;
   console.log('Link was clicked!');
   console.log(event);
 
-  /* remove class 'active' from all article links  */
+  /* [Done] remove class 'active' from all article links  */
 
   const activeLinks = document.querySelectorAll('.titles a.active');
 
@@ -18,9 +22,13 @@ const titleClickHandler = function (event) {
     activeLink.classList.remove('active');
   }
 
-  /* add class 'active' to the clicked link */
+  /* [IN PROGRESS] add class 'active' to the clicked link */
 
-  /* remove class 'active' from all articles */
+  clickedElement.classList.add('active');
+  console.log('clickedElement:', clickedElement);
+  //   console.log('clickedElement (with plus): ' + clickedElement);
+
+  /* [DONE] remove class 'active' from all articles */
 
   const activeArticles = document.querySelectorAll('.posts .active');
 
