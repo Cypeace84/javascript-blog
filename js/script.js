@@ -1,14 +1,5 @@
 'use strict';
 
-// ???const { active } = require('browser-sync');
-
-/*
-document.getElementById('test-button').addEventListener('click', function () {
-  const links = document.querySelectorAll('.titles a');
-  console.log('links:', links);
-});
-*/
-
 const titleClickHandler = function (event) {
   event.preventDefault(); //wyłącza domyśną zmianę hasha strony przez przeglądarkę
   const clickedElement = this;
@@ -56,23 +47,41 @@ const titleClickHandler = function (event) {
     optTitleListSelector = '.titles';
 
   function generateTitleLinks() {
-    /* remove contents of titleList */
+    /* [DONE] remove contents of titleList */
 
     const titleList = document.querySelector(optTitleListSelector);
     titleList.innerHTML = '';
     console.log('remove:', titleList);
 
     /* for each article */
+    let html = '';
+    const articles = document.querySelector(optArticleSelector);
+    for (let article of articles) {
+      // for (let articles of optArticleSelector) {
 
-    /* get the article id */
+      /* get the article id */
 
-    /* find the title element */
+      const articleId = optArticleSelector.getAttribute('id');
+      console.log('articleId:', articleId);
 
-    /* get the title from the title element */
+      /* find the title element */
+      /* get the title from the title element */
+      const articleTitle = article.querySelector(optTitleSelector).innerHTML;
 
-    /* create HTML of the link */
+      /* create HTML of the link */
 
-    /* insert link into titleList */
+      const linkHTML =
+        '<li><a href="#' +
+        articleId +
+        '"><span>' +
+        articleTitle +
+        '</span></a></li>';
+      console.log('linkHtml:', linkHTML);
+      /* insert link into titleList */
+
+      html = html + linkHTML;
+    }
+    titleList.innerHTML = html;
   }
 
   generateTitleLinks();
