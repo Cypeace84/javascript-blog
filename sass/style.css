@@ -72,6 +72,8 @@ body {
 
 .list .active {
   font-weight: bold;
+  font-size: 24px;
+  color: green;
 }
 
 .list-horizontal li {
