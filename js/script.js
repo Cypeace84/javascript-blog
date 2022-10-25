@@ -115,6 +115,8 @@ function generateTags() {
     const articleTags = article.getAttribute('data-tags');
     console.log('data-tags:', articleTags);
     /* split tags into array */
+    const articleTagsArray = articleTags.split(' ');
+    console.log('tablica', articleTagsArray);
     /* START LOOP: for each tag */
     /* generate HTML of the link */
     /* add generated code to html variable */
