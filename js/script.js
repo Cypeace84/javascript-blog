@@ -118,8 +118,18 @@ function generateTags() {
     const articleTagsArray = articleTags.split(' ');
     console.log('tablica', articleTagsArray);
     /* START LOOP: for each tag */
-    /* generate HTML of the link */
-    /* add generated code to html variable */
+    for (let tag of articleTagsArray) {
+      /* generate HTML of the link */
+      const linkHtml =
+        '<li><a href= "#' +
+        articleTags +
+        ' "><span>' +
+        articleTags +
+        '</span></a></li>';
+      console.log('linkTag', linkHtml);
+
+      /* add generated code to html variable */
+    }
     /* END LOOP: for each tag */
     /* insert HTML of all the links into the tags wrapper */
     /* END LOOP: for every article: */
