@@ -189,7 +189,7 @@ function addClickListenersToTags() {
   /* START LOOP: for each link */
   for (let linkToTag of linksToTags) {
     /* add tagClickHandler as event listener for that link */
-    linkToTag.addEventListener('click', titleClickHandler);
+    linkToTag.addEventListener('click', tagClickHandler);
     /* END LOOP: for each link */
   }
 }
