@@ -198,3 +198,29 @@ function addClickListenersToTags() {
 }
 
 addClickListenersToTags();
+
+function generateAuthors() {
+  /* find all articles */
+  const articles = document.querySelectorAll('optArticleSelector');
+  /* START LOOP: for every article: */
+  for (let article of articles) {
+    /* find authors wrapper */
+    const author = article.querySelector(optArticleAuthorSelector);
+    console.log('author', author);
+    /* make html variable with empty string */
+    let html = '';
+    /* get author from data-author attribute */
+    const authorName = article.getAttribute('data-author');
+    console.log('authorName', authorName);
+    /* generate HTML of the link */
+    const linkHTML =
+      '<a href= "#' + authorName + '"><span>' + authorName + '</span></a>';
+    console.log('linkAuuthor', linkHTML);
+    /* add generated code to html variable */
+    html = html + linkHTML;
+    /* END LOOP */
+    author.innerHTML = html;
+  }
+}
+
+generateAuthors();
