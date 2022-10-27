@@ -104,29 +104,30 @@ function generateTags() {
   /* [DONE] find all articles */
 
   const articles = document.querySelectorAll(optArticleSelector);
+  console.log('artykuły', articles);
 
   /* [DONE] START LOOP: for every article: */
 
   for (let article of articles) {
     /* [DONE] find tags wrapper */
     const titleList = article.querySelector(optArticleTagsSelector);
-    //console.log('titleList2', titleList);
+    console.log('titleList2', titleList);
     /* [DONE] make html variable with empty string */
     let html = '';
     /* [DONE] get tags from data-tags attribute */
     const articleTags = article.getAttribute('data-tags');
-    //console.log('articleTags:', articleTags);
+    console.log('articleTags:', articleTags);
     /* [DONE] split tags into array */
     const articleTagsArray = articleTags.split(' ');
-    //console.log('tablica', articleTagsArray);
+    console.log('tablica', articleTagsArray);
     /* [DONE] START LOOP: for each tag */
     for (let tag of articleTagsArray) {
-      //console.log('tag!!!!!!!!!', tag);
+      console.log('tag!!!!!!!!!', tag);
       /* [DONE] generate HTML of the link */
       const linkHTML =
         '<li><a href= "#tag-' +
-        articleTags +
-        ' "><span>' +
+        tag +
+        '"><span>' +
         tag +
         '</span></a></li><span> </span>';
       console.log('linkTag', linkHTML);
@@ -157,6 +158,7 @@ function tagClickHandler(event) {
 
   /* make a new constant "tag" and extract tag from the "href" constant */
   const tag = href.replace('#tag-', '');
+  console.log('tag', tag);
 
   /* find all tag links with class active */
   const activeTagLinks = document.querySelectorAll('a.active[href^="#tag-"]');
@@ -171,7 +173,7 @@ function tagClickHandler(event) {
   }
   /* find all tag links with "href" attribute equal to the "href" constant */
   const tagLinks = document.querySelectorAll('a[href="' + href + '"]');
-
+  console.log('tagLinks', tagLinks);
   /* START LOOP: for each found tag link */
   for (let tagLink of tagLinks) {
     /* add class active */
