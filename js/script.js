@@ -221,7 +221,8 @@ function generateTags() {
       // '(' +
       // allTags[tag] +
       // ')' +
-      '</span></a></li>';
+      '</span></a></li>' +
+      ' ';
     console.log('tagLinkHTML:', tagLinkHTML);
     allTagsHTML += tagLinkHTML;
     // '<li><a href="#tag-' +

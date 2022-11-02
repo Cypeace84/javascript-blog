@@ -104,13 +104,12 @@ body {
   margin: 0 10px 0 0;
 }
 
-ul.list.tags {
-  display: inline;
+ul.list.tags li {
+  display: inline-block;
 }
 
 ul.list.tags li a {
   text-decoration: none;
-  display: inline;
 }
 
 .tag-size-1 {
