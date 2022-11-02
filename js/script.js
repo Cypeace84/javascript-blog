@@ -218,9 +218,9 @@ function generateTags() {
       tag +
       '"><span>' +
       tag +
-      '(' +
-      allTags[tag] +
-      ')' +
+      // '(' +
+      // allTags[tag] +
+      // ')' +
       '</span></a></li>';
     console.log('tagLinkHTML:', tagLinkHTML);
     allTagsHTML += tagLinkHTML;

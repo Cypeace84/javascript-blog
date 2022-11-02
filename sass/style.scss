@@ -82,11 +82,10 @@ body {
   padding: 0;
  .active {
    font-weight: bold;
-   font-size: 24px;
-   color: green;
+   //font-size: 24px;
+   //color: green;
   }
 }
-
 .list-horizontal {
   li {
     display: inline-block;
@@ -121,3 +120,31 @@ body {
   }
 }
 
+ul.list.tags { 
+  display: inline;
+  li a{
+  text-decoration: none;
+  display: inline;
+  }
+}
+
+.tag-size-1 {
+  font-size: 120%;
+  color: darkorange;
+}
+.tag-size-2 { 
+  font-size: 200%;
+  color: rgb(131, 53, 123);
+}
+.tag-size-3 { 
+  font-size: 280%;
+  color: darkcyan;
+}
+.tag-size-4 { 
+  font-size: 360%;
+  color: darkgreen;
+}
+.tag-size-5 { 
+  font-size: 420%;
+  color: darkred;
+}

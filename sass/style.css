@@ -72,8 +72,6 @@ body {
 
 .list .active {
   font-weight: bold;
-  font-size: 24px;
-  color: green;
 }
 
 .list-horizontal li {
@@ -104,4 +102,38 @@ body {
 
 .post-tags p {
   margin: 0 10px 0 0;
+}
+
+ul.list.tags {
+  display: inline;
+}
+
+ul.list.tags li a {
+  text-decoration: none;
+  display: inline;
+}
+
+.tag-size-1 {
+  font-size: 120%;
+  color: darkorange;
+}
+
+.tag-size-2 {
+  font-size: 200%;
+  color: #83357b;
+}
+
+.tag-size-3 {
+  font-size: 280%;
+  color: darkcyan;
+}
+
+.tag-size-4 {
+  font-size: 360%;
+  color: darkgreen;
+}
+
+.tag-size-5 {
+  font-size: 420%;
+  color: darkred;
 }
