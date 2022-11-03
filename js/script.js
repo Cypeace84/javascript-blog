@@ -8,6 +8,9 @@ const templates = {
   authorLink: Handlebars.compile(
     document.querySelector('#template-author-link').innerHTML
   ),
+  tagCloudLink: Handlebars.compile(
+    document.querySelector('#template-tag-cloud-link').innerHTML
+  ),
 };
 /* eslint-disable indent */
 ('use strict');
@@ -222,7 +225,10 @@ function generateTags() {
   const tagsParams = calculateTagsParams(allTags);
   console.log('tagsParams:', tagsParams);
   /* [NEW] create variable for all links HTML code */
-  let allTagsHTML = '';
+
+  const allTagsData = { tags: [] };
+
+  // let allTagsHTML = '';
 
   /* [NEW] START LOOP: for each tag in allTags: */
   for (let tag in allTags) {
@@ -242,7 +248,15 @@ function generateTags() {
       // ')' +
       '</span></a></li>';
     console.log('tagLinkHTML:', tagLinkHTML);
-    allTagsHTML += tagLinkHTML;
+
+    allTagsData.tags.push({
+      tag: tag,
+      count: allTags[tag],
+      className: calculateTagClass(allTags[tag], tagsParams),
+    });
+    console.log('allTagsData', allTagsData);
+
+    // allTagsHTML += tagLinkHTML;
     // '<li><a href="#tag-' +
     //   tag +
     //   '"><span>' +
@@ -259,7 +273,9 @@ function generateTags() {
   /* [NEW] END LOOP: for each tag in allTags: */
 
   /*[NEW] add HTML from allTagsHTML to tagList */
-  tagList.innerHTML = allTagsHTML;
+
+  tagList.innerHTML = templates.tagCloudLink(allTagsData);
+  // tagList.innerHTML = allTagsHTML;
 }
 
 generateTags();
