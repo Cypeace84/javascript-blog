@@ -1,5 +1,13 @@
+const templates = {
+  articleLink: Handlebars.compile(
+    document.querySelector('#template-article-link').innerHTML
+  ),
+  tagLink: Handlebars.compile(
+    document.querySelector('#template-tag-link').innerHTML
+  ),
+};
 /* eslint-disable indent */
-'use strict';
+('use strict');
 
 const titleClickHandler = function (event) {
   event.preventDefault(); //wyłącza domyśną zmianę hasha strony przez przeglądarkę
@@ -81,12 +89,15 @@ function generateTitleLinks(customSelector = '') {
 
     /* [DONE] create HTML of the link */
 
-    const linkHTML =
-      '<li><a href="#' +
-      articleId +
-      '"><span>' +
-      articleTitle +
-      '</span></a></li>';
+    const linkHTMLData = { id: articleId, title: articleTitle };
+    const linkHTML = templates.articleLink(linkHTMLData);
+
+    // const linkHTML =
+    //   '<li><a href="#' +
+    //   articleId +
+    //   '"><span>' +
+    //   articleTitle +
+    //   '</span></a></li>';
     console.log('linkHtml:', linkHTML);
 
     /* [DONE] insert link into titleList */
@@ -162,12 +173,16 @@ function generateTags() {
       console.log('tag!!!!!!!!!', tag);
 
       /* [DONE] generate HTML of the link */
-      const linkHTML =
-        '<li><a href= "#tag-' +
-        tag +
-        '"><span>' +
-        tag +
-        '</span></a></li><span> </span>';
+
+      const linkHTMLData = { id: articleTags, tag: tag };
+      const linkHTML = templates.tagLink(linkHTMLData);
+
+      // const linkHTML =
+      //   '<li><a href= "#tag-' +
+      //   tag +
+      //   '"><span>' +
+      //   tag +
+      //   '</span></a></li><span> </span>';
       console.log('linkTag', linkHTML);
 
       /* [DONE] add generated code to html variable */
