@@ -106,6 +106,7 @@ body {
 
 ul.list.tags li {
   display: inline-block;
+  margin-right: 10px;
 }
 
 ul.list.tags li a {
