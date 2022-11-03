@@ -5,6 +5,9 @@ const templates = {
   tagLink: Handlebars.compile(
     document.querySelector('#template-tag-link').innerHTML
   ),
+  authorLink: Handlebars.compile(
+    document.querySelector('#template-author-link').innerHTML
+  ),
 };
 /* eslint-disable indent */
 ('use strict');
@@ -174,7 +177,7 @@ function generateTags() {
 
       /* [DONE] generate HTML of the link */
 
-      const linkHTMLData = { id: articleTags, tag: tag };
+      const linkHTMLData = { tag: tag };
       const linkHTML = templates.tagLink(linkHTMLData);
 
       // const linkHTML =
@@ -333,12 +336,15 @@ function generateAuthors() {
     const authorName = article.getAttribute('data-author');
     console.log('authorName', authorName);
     /* generate HTML of the link */
-    const linkHTML =
-      '<a href= "#author-' +
-      authorName +
-      '"><span>' +
-      authorName +
-      '</span></a>';
+    const linkHTMLData = { authorName: authorName };
+    const linkHTML = templates.authorLink(linkHTMLData);
+
+    // const linkHTML =
+    //   '<a href= "#author-' +
+    //   authorName +
+    //   '"><span>' +
+    //   authorName +
+    //   '</span></a>';
     console.log('linkTagAUTHOR', linkHTML);
     /* add generated code to html variable */
     html = html + linkHTML;
